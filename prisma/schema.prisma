@@ -16,7 +16,7 @@ datasource db {
 model Racket {
   id          Int     @id @default(autoincrement())
   name        String
-  price       Float
+  price       Int
   description String
   imageUrl    String
   stock       Int
