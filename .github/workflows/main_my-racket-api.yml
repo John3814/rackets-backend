@@ -35,6 +35,14 @@ jobs:
           name: node-app
           path: .
 
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Prisma Migrate
+        run: npx prisma migrate deploy
+
+
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -62,4 +70,5 @@ jobs:
           app-name: 'my-racket-api'
           slot-name: 'Production'
           package: .
+
           
